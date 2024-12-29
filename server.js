@@ -74,6 +74,22 @@ app.put('/update-employee/:EmployeeID', async (req, res) => {
   }
 });
 
+// Delete Employee 
+app.delete('/delete-employee/:EmployeeID',async(req,res)=>{
+    try{
+        const employeeee=await Employee.fundOneAndDelete({EmployeeID:req.params.EmployeeID});
+        if(employeeee){
+            res.status(200).send('deleted successfully');
+        }
+        else{
+            res.status(404).send('error  deleting');
+        }
+    }catch(error){
+        res.status(400).send('errrrrrrrrorrrrr');
+        
+    }
+});
+
 // Start the server
 const PORT = 3001;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
