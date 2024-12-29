@@ -5,7 +5,7 @@ import AddEmployee from './pages/AddEmployee';
 import SearchEmployee from './pages/SearchEmployee';
 import UpdateEmployee from './pages/UpdateEmployee';
 import ViewEmployees from './pages/ViewEmployees';
-
+import DeleteEmployee from './pages/DeleteEmployee';
 function App() {
   return (
     <Router>
@@ -17,6 +17,7 @@ function App() {
             <Nav.Link as={Link} to="/search">Search Employee</Nav.Link>
             <Nav.Link as={Link} to="/update">Update Employee</Nav.Link>
             <Nav.Link as={Link} to="/view">View Employees</Nav.Link>
+            <Nav.Link as={Link} to="/delete">Delete Employee</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
@@ -26,6 +27,7 @@ function App() {
           <Route path="/search" element={<SearchEmployee/>} />
           <Route path="/update" element={<UpdateEmployee />} />
           <Route path="/view" element={<ViewEmployees />} />
+          <Route path="/delete" element={<DeleteEmployee/>} />
         </Routes>
       </Container>
     </Router>
